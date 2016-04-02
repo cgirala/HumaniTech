@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
         /*
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         Intent addAlarm = new Intent(MainActivity.this, AddAlarm.class);
         startActivity(addAlarm);
         finish();
+
     }
 
 
