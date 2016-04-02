@@ -7,6 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="New Text"
         android:id="@+id/alarmName" />
 
@@ -15,11 +16,13 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
+        android:layout_margin="20dp"
         android:id="@+id/time" />
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Switch"
+        android:layout_margin="20dp"
+        android:text="onOff"
         android:id="@+id/btnOnOff" />
 </LinearLayout>

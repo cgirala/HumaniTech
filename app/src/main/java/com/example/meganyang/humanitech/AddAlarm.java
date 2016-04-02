@@ -39,6 +39,5 @@ public class AddAlarm extends AppCompatActivity {
     public void backToMain(View view){
         Intent backToMain = new Intent(AddAlarm.this, MainActivity.class);
         startActivity(backToMain);
-
     }
 }
