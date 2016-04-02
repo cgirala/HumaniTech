@@ -62,5 +62,4 @@ public class MainActivity extends AppCompatActivity {
         Button wButton = (Button)findViewById(R.id.wButton);
         wButton.setText("Micah's Button");
     }
-    */
 }
