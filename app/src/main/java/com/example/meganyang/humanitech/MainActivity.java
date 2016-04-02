@@ -17,14 +17,10 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences example;
     public static final String PASSTOMAIN = "passOff";
-    private ArrayAdapter<String> adapter;
-    private ArrayList<String> ourList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
-
         popoulateView();
-
     }
 
     private void popoulateView() {
@@ -57,17 +51,13 @@ public class MainActivity extends AppCompatActivity {
         for (String string: arr) {
             str += string;
         }
-        ourList.add(str);
         /*
         String name = arr[0];
         String hour = arr[1];
         String minute = arr[2];
         */
-        ListView list = (ListView) findViewById(R.id.alarmList);
-        adapter = new ArrayAdapter<>(this, R.layout.activity_listview);
-        list.setAdapter(adapter);
-//        TextView see = (TextView) findViewById(R.id.textView);
-//        see.setText(str);
+        TextView see = (TextView) findViewById(R.id.textView);
+        see.setText(str);
     }
 
     @Override
