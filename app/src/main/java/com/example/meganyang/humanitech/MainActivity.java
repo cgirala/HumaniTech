@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView titleBackground = (TextView) findViewById(R.id.titleBackground);
+        titleBackground.setMaxHeight(title.getHeight());
+        titleBackground.setMaxHeight(title.getHeight());
+
+        //ListView alarms = (ListView) findViewById(R.id.alarmList);
         */
     }
 
