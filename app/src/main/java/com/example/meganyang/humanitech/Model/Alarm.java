@@ -6,14 +6,33 @@ package com.example.meganyang.humanitech.Model;
 public class Alarm {
     private String name;
     private boolean isOn;
-    private long time;
+    private int minute;
+    private int hour;
     private boolean[] days = new boolean[7];
 
-    public Alarm (String name, boolean isOn, long time) {
+    public Alarm (String name, boolean isOn, int hour, int minute) {
         this.name = name;
         this.isOn = isOn;
-        this.time = time;
+        this.hour = hour;
+        this.minute = minute;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean getIsOn() {
+        return isOn;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
 
     public void setIsOn(boolean isOn) {
 

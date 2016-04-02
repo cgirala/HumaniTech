@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.meganyang.humanitech.Model.Alarm;
+
 import java.util.Calendar;
 
 public class AddAlarm extends AppCompatActivity {
@@ -17,17 +19,13 @@ public class AddAlarm extends AppCompatActivity {
     private int minute;
     private String name;
     private String timeOfDay;
+    private Alarm alarm;
     public static final String PASSTOMAIN = "passOff";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_alarm);
-        TimePicker time = (TimePicker) findViewById(R.id.timePicker);
-        TextView daName = (TextView) findViewById(R.id.textView2);
-        hour = time.getHour();
-        minute = time.getMinute();
-        name = daName.getText().toString();
     }
 
     @Override
@@ -54,11 +52,14 @@ public class AddAlarm extends AppCompatActivity {
 
     public void returnToMenu(View view){
         Intent returnToMenu = new Intent(AddAlarm.this, MainActivity.class);
+        TimePicker time = (TimePicker) findViewById(R.id.timePicker);
+        TextView daName = (TextView) findViewById(R.id.textView2);
+        hour = time.getHour();
+        minute = time.getMinute();
+        name = daName.getText().toString();
+        returnToMenu.putExtra("name", name);
+        returnToMenu.putExtra("hour", hour);
+        returnToMenu.putExtra("minute", minute);
         startActivity(returnToMenu);
     }
-
-
-
-
-
 }
