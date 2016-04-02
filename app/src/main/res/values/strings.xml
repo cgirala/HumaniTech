@@ -4,4 +4,7 @@
     <string name="youDoYou">You do you</string>
     <string name="addAlarm">ADD</string>
     <string name="nameInput">Name</string>
+    <string name="title_activity_add_alarm">AddAlarm</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
