@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void popoulateView() {
 
-        // Create list of items
+        // Create list of
         example = getSharedPreferences(PASSTOMAIN, 0);
         String userString = example.getString("theKey", "Nothing");
         String[] arr = userString.split(", ");
