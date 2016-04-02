@@ -24,6 +24,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ArrayList<String> ourList = new ArrayList<>();
     int counter = 0;
+    private ArrayList<String> quotes;
+    private Random rand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,13 @@ public class MainActivity extends AppCompatActivity {
         // configure listview
         ListView list = (ListView) findViewById(R.id.alarmList);
         list.setAdapter(adapter);
+        /*
+        String name = arr[0];
+        String hour = arr[1];
+        String minute = arr[2];
+        */
+        //TextView see = (TextView) findViewById(R.id.textView);
+        //see.setText(str);
     }
 
     @Override
@@ -148,5 +158,28 @@ public class MainActivity extends AppCompatActivity {
             Log.i("getCount", Integer.toString(ourList.size() / 3));
             return ourList.size() / 3;
         }
+    }
+    /*
+    public void micahButton(View view) {
+        Button wButton = (Button)findViewById(R.id.wButton);
+        wButton.setText("Micah's Button");
+    } */
+
+// to generate random quotes- to add more
+    private void populateQuotes() {
+            quotes.add("Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible." +
+                    "\n" + "- Francis of Assisi");
+            quotes.add("Believe you can and you're halfway there." +
+                "\n" + "- Theodore Roosevelt");
+            quotes.add("Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible." +
+                "\n" + "- Francis of Assisi");
+            quotes.add("It does not matter how slowly you go as long as you do not stop." +
+                "\n" + "- Confucius");
+            quotes.add("Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time." +
+                "\n" + "- Thomas A. Edison");
+    }
+
+    private String getRandQuote() {
+        return quotes.get(rand.nextInt(5));
     }
 }
