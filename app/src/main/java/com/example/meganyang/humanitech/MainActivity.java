@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+
+
     /*
     public void micahButton(View view) {
         Button wButton = (Button)findViewById(R.id.wButton);
