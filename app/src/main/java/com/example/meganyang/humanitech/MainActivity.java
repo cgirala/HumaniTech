@@ -31,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
-        TextView title = (TextView) findViewById(R.id.title);
-        TextView titleBackground = (TextView) findViewById(R.id.titleBackground);
-        titleBackground.setMaxHeight(title.getHeight());
-        titleBackground.setMaxHeight(title.getHeight());
+        popoulateView();
 
-        //ListView alarms = (ListView) findViewById(R.id.alarmList);
-        */
+    }
+
+    private void popoulateView() {
+
+        // Create list of items
     }
 
     @Override
