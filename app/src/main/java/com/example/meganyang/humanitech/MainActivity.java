@@ -1,5 +1,6 @@
 package com.example.meganyang.humanitech;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -65,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addAlarm(View view) {
+        Intent addAlarm = new Intent(MainActivity.this, AddAlarm.class);
+        startActivity(addAlarm);
+        finish();
+
     }
 
     /*
