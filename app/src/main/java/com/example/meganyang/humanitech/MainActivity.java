@@ -54,12 +54,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addAlarm(View view) {
-
     }
 
     /*
     public void micahButton(View view) {
         Button wButton = (Button)findViewById(R.id.wButton);
         wButton.setText("Micah's Button");
-    }
+    } */
 }
