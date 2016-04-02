@@ -34,8 +34,8 @@
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="New ToggleButton"
-            android:id="@+id/toggleButton"
+            android:text="Monday"
+            android:id="@+id/monday"
             android:checked="false"
             android:textOff="M"
             android:textOn="M" />
@@ -43,48 +43,48 @@
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="New ToggleButton"
-            android:id="@+id/toggleButton2"
+            android:text="Tuesday"
+            android:id="@+id/tuesday"
             android:textOff="T"
             android:textOn="T" />
 
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="New ToggleButton"
-            android:id="@+id/toggleButton3"
+            android:text="Wednesday"
+            android:id="@+id/wednesday"
             android:textOff="W"
             android:textOn="W" />
 
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="New ToggleButton"
-            android:id="@+id/toggleButton5"
+            android:text="Thursday"
+            android:id="@+id/thursday"
             android:textOff="R"
             android:textOn="R" />
 
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="New ToggleButton"
-            android:id="@+id/toggleButton4"
+            android:text="Friday"
+            android:id="@+id/friday"
             android:textOff="F"
             android:textOn="F" />
 
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="New ToggleButton"
-            android:id="@+id/toggleButton6"
+            android:text="Saturday"
+            android:id="@+id/saturday"
             android:textOn="S"
             android:textOff="S" />
 
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="Su"
-            android:id="@+id/toggleButton7"
+            android:text="Sunday"
+            android:id="@+id/sunday"
             android:textOn="Su"
             android:textOff="Su" />
     </LinearLayout>
