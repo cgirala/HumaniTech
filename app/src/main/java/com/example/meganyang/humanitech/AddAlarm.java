@@ -1,6 +1,7 @@
 package com.example.meganyang.humanitech;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -57,9 +58,11 @@ public class AddAlarm extends AppCompatActivity {
         hour = time.getHour();
         minute = time.getMinute();
         name = daName.getText().toString();
-        returnToMenu.putExtra("name", name);
-        returnToMenu.putExtra("hour", hour);
-        returnToMenu.putExtra("minute", minute);
+        String total = hour + ", " + minute + ", " + name;
+        SharedPreferences prefs = getSharedPreferences(PASSTOMAIN, 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("theKey", total);
+        editor.apply();
         startActivity(returnToMenu);
     }
 }
