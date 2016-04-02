@@ -13,14 +13,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nameInput"
         android:id="@+id/textView2"
         android:editable="true"
         android:inputType="text"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:hint="Name Your Alarm"/>
 
     <LinearLayout
         android:orientation="horizontal"

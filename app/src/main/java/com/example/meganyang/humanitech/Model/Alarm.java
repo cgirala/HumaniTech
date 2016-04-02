@@ -1,45 +1,62 @@
 package com.example.meganyang.humanitech.Model;
 
+import java.util.ArrayList;
+
 /**
  * Created by Christian Girala on 4/2/2016.
  */
 public class Alarm {
-    private String name;
+    private boolean[] days;
     private boolean isOn;
-    private int minute;
-    private int hour;
-    private boolean[] days = new boolean[7];
+    private String name;
+    private long time;
 
-    public Alarm (String name, boolean isOn, int hour, int minute) {
+    public Alarm (String name, boolean isOn, long time, boolean[] days) {
         this.name = name;
         this.isOn = isOn;
-        this.hour = hour;
-        this.minute = minute;
+        this.time = time;
+        this.days = days;
     }
 
-    public String getName() {
-        return name;
+    public void setDays(boolean[] days) {
+        this.days = days;
+    }
+
+    public void setIsOn(boolean isOn) {
+        this.isOn = isOn;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTime(long time) {
+        this.name = name;
+    }
+
+    public boolean[] getDays() {
+        return days;
     }
 
     public boolean getIsOn() {
         return isOn;
     }
 
-    public int getHour() {
-        return hour;
+    public String getName() {
+        return name;
     }
 
-    public int getMinute() {
-        return minute;
+    public long getTime() {
+        return time;
     }
 
-
-    public void setIsOn(boolean isOn) {
-
+    public ArrayList toArraylist() {
+        ArrayList transform = new ArrayList();
+        transform.add(days);
+        transform.add(isOn);
+        transform.add(name);
+        transform.add(time);
+        return transform;
     }
-    public void setName(String name) {
-
-    }
-
 
 }
