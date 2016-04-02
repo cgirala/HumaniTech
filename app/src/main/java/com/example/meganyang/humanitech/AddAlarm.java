@@ -58,7 +58,7 @@ public class AddAlarm extends AppCompatActivity {
         hour = time.getHour();
         minute = time.getMinute();
         name = daName.getText().toString();
-        String total = hour + ", " + minute + ", " + name;
+        String total = hour + "," + minute + "," + name;
         SharedPreferences prefs = getSharedPreferences(PASSTOMAIN, 0);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("theKey", total);
