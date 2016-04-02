@@ -93,7 +93,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Finish"
-        android:onClick="backToMain"
         android:id="@+id/button2"
         android:layout_gravity="bottom|center_horizontal" />
 

@@ -1,18 +1,31 @@
 package com.example.meganyang.humanitech;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.TextView;
+import android.widget.TimePicker;
+
+import java.util.Calendar;
 
 public class AddAlarm extends AppCompatActivity {
+
+    private int hour;
+    private int minute;
+    private String name;
+    private String timeOfDay;
+    public static final String PASSTOMAIN = "passOff";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_alarm);
+        TimePicker time = (TimePicker) findViewById(R.id.timePicker);
+        TextView daName = (TextView) findViewById(R.id.textView2);
+        hour = time.getHour();
+        minute = time.getMinute();
+        name = daName.getText().toString();
     }
 
     @Override
@@ -35,10 +48,5 @@ public class AddAlarm extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    public void backToMain(View view){
-        Intent backToMain = new Intent(AddAlarm.this, MainActivity.class);
-        startActivity(backToMain);
-
     }
 }
