@@ -36,10 +36,9 @@ public class AddAlarm extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void backToMain(View view){
+        Intent backToMain = new Intent(AddAlarm.this, MainActivity.class);
+        startActivity(backToMain);
 
-    public void backToMain(View view) {
-        Intent back = new Intent(AddAlarm.this, MainActivity.class);
-        startActivity(back);
-        finish();
     }
 }
