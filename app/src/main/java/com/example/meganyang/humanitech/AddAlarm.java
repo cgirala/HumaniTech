@@ -1,9 +1,11 @@
 package com.example.meganyang.humanitech;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class AddAlarm extends AppCompatActivity {
 
@@ -33,5 +35,11 @@ public class AddAlarm extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void backToMain(View view) {
+        Intent back = new Intent(AddAlarm.this, MainActivity.class);
+        startActivity(back);
+        finish();
     }
 }
