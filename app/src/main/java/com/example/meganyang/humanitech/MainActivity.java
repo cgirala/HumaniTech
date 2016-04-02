@@ -1,6 +1,5 @@
 package com.example.meganyang.humanitech;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -32,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });*/
+        });
 
-        popoulateView();
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView titleBackground = (TextView) findViewById(R.id.titleBackground);
+        titleBackground.setMaxHeight(title.getHeight());
+        titleBackground.setMaxHeight(title.getHeight());
 
-    }
-
-    private void popoulateView() {
-
-        // Create list of items
+        //ListView alarms = (ListView) findViewById(R.id.alarmList);
+        */
     }
 
     @Override
@@ -66,9 +65,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addAlarm(View view) {
-        Intent newAlarm = new Intent(MainActivity.this, AddAlarm.class);
-        startActivity(newAlarm);
-        finish();
     }
 
     /*
