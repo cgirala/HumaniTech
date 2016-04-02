@@ -1,9 +1,11 @@
 package com.example.meganyang.humanitech;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -49,4 +51,14 @@ public class AddAlarm extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void returnToMenu(View view){
+        Intent returnToMenu = new Intent(AddAlarm.this, MainActivity.class);
+        startActivity(returnToMenu);
+    }
+
+
+
+
+
 }
