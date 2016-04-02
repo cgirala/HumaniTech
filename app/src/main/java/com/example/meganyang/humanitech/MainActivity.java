@@ -1,6 +1,7 @@
 package com.example.meganyang.humanitech;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,13 +19,13 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
+    SharedPreferences example;
+    public static final String PASSTOMAIN = "passOff";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
         /*
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -36,14 +38,26 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
-
         popoulateView();
-
     }
 
     private void popoulateView() {
 
         // Create list of items
+        example = getSharedPreferences(PASSTOMAIN, 0);
+        String userString = example.getString("theKey", "Nothing");
+        String[] arr = userString.split(", ");
+        String str = new String("");
+        for (String string: arr) {
+            str += string;
+        }
+        /*
+        String name = arr[0];
+        String hour = arr[1];
+        String minute = arr[2];
+        */
+        TextView see = (TextView) findViewById(R.id.textView);
+        see.setText(str);
     }
 
     @Override

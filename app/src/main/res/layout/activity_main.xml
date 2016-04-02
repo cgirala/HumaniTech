@@ -42,5 +42,13 @@
         android:id="@+id/alarmList"
         android:layout_below="@id/title"
         android:background="@color/black"/>
-    
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/alarmList"
+        android:layout_alignStart="@+id/title" />
+
 </RelativeLayout>
