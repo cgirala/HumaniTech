@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         example = getSharedPreferences(PASSTOMAIN, 0);
         String userString = example.getString("theKey", "Nothing");
         String[] arr = userString.split(",");
-        Log.i("sorting", "listview");
+        //Log.i("sorting", "listview");
         for (String string: arr) {
             //str += string;
            // Log.i("String value: ", string);
@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         Intent addAlarm = new Intent(MainActivity.this, AddAlarm.class);
         startActivity(addAlarm);
         finish();
-
     }
 
     /**
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            Log.i("inAdapter", "check");
+            //Log.i("inAdapter", "check");
             if (convertView == null) {
                 // inflate the item
                 LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 String name = null;
 
                 for (int i = counter; i < localCounter; i++) {
-                    Log.i("data", ourList.get(i));
+                    //Log.i("data", ourList.get(i));
                     if (localCounter - i == 3) {
                         time[0] = ourList.get(i);
                     } else if (localCounter - i == 2) {
@@ -140,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                Log.i("testing", "passed one passed onepassed one passed onepassed onepassed one passed one passed one");
+                //Log.i("testing", "passed one passed onepassed one passed onepassed onepassed one passed one passed one");
 
                 TextView tvName = (TextView) convertView.findViewById(R.id.alarmName);
                 tvName.setText(name);
@@ -155,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
            // Log.i("ourList count: ", Integer.toString(ourList.size()));
-            Log.i("getCount", Integer.toString(ourList.size() / 3));
+            //Log.i("getCount", Integer.toString(ourList.size() / 3));
             return ourList.size() / 3;
         }
     }

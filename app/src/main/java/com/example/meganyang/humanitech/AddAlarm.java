@@ -1,5 +1,8 @@
 package com.example.meganyang.humanitech;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -21,12 +24,25 @@ public class AddAlarm extends AppCompatActivity {
     private String name;
     private String timeOfDay;
     private Alarm alarm;
+    private Context context;
+    PendingIntent pendingIntent;
+    Intent intent;
+    AlarmManager alarmManager;
     public static final String PASSTOMAIN = "passOff";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.context = this;
         setContentView(R.layout.activity_add_alarm);
+
+        // initialize alarm manager
+        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        // create new intent
+        intent = new Intent(context,  AlarmReceiver.class);
+
+
     }
 
     @Override
@@ -63,6 +79,14 @@ public class AddAlarm extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("theKey", total);
         editor.apply();
+
+        // create pending intent
+        pendingIntent = PendingIntent.getBroadcast(AddAlarm.this,
+                0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        // set alarm manager
+        alarmManager.set(AlarmManager.RTC_WAKEUP, (long)((60 * minute)
+                + (60 * 60 * hour)), pendingIntent);
         startActivity(returnToMenu);
     }
 }
