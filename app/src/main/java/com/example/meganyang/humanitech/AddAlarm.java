@@ -35,13 +35,13 @@ public class AddAlarm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.context = this;
         setContentView(R.layout.activity_add_alarm);
-
+        /*
         // initialize alarm manager
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         // create new intent
         intent = new Intent(context,  AlarmReceiver.class);
-
+        */
 
     }
 
@@ -74,12 +74,12 @@ public class AddAlarm extends AppCompatActivity {
         hour = time.getHour();
         minute = time.getMinute();
         name = daName.getText().toString();
-        String total = hour + ", " + minute + ", " + name;
+        String total = hour + "," + minute + "," + name;
         SharedPreferences prefs = getSharedPreferences(PASSTOMAIN, 0);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("theKey", total);
         editor.apply();
-
+        /*
         // create pending intent
         pendingIntent = PendingIntent.getBroadcast(AddAlarm.this,
                 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -87,6 +87,7 @@ public class AddAlarm extends AppCompatActivity {
         // set alarm manager
         alarmManager.set(AlarmManager.RTC_WAKEUP, (long)((60 * minute)
                 + (60 * 60 * hour)), pendingIntent);
+                */
         startActivity(returnToMenu);
     }
 }

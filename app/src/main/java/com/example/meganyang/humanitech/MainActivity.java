@@ -1,6 +1,8 @@
 package com.example.meganyang.humanitech;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     int counter = 0;
     private ArrayList<String> quotes;
     private Random rand;
+    PendingIntent pendingIntent;
+    Intent intent;
+    AlarmManager alarmManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +51,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void popoulateView() {
-
         // Create list of
         example = getSharedPreferences(PASSTOMAIN, 0);
         String userString = example.getString("theKey", "Nothing");
         String[] arr = userString.split(",");
-        //Log.i("sorting", "listview");
         for (String string: arr) {
-            //str += string;
-           // Log.i("String value: ", string);
             ourList.add(string);
         }
-        //ourList.add(str);
 
         // Initialize adapter
         adapter = new ArrayAdapterItem<>(this, R.layout.alarm_list_detail);
@@ -65,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
         // configure listview
         ListView list = (ListView) findViewById(R.id.alarmList);
         list.setAdapter(adapter);
-        /*
-        String name = arr[0];
-        String hour = arr[1];
-        String minute = arr[2];
-        */
         //TextView see = (TextView) findViewById(R.id.textView);
         //see.setText(str);
     }
@@ -118,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            //Log.i("inAdapter", "check");
             if (convertView == null) {
                 // inflate the item
                 LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
@@ -126,6 +120,12 @@ public class MainActivity extends AppCompatActivity {
                 int localCounter = counter + 3;
                 String[] time = new String[2];
                 String name = null;
+
+                // initialize alarm manager
+                alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+                // create new intent
+                intent = new Intent(mContext,  AlarmReceiver.class);
 
                 for (int i = counter; i < localCounter; i++) {
                     //Log.i("data", ourList.get(i));
@@ -139,12 +139,19 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                //Log.i("testing", "passed one passed onepassed one passed onepassed onepassed one passed one passed one");
+                // create pending intent
+                pendingIntent = PendingIntent.getBroadcast(MainActivity.this,
+                        0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+                // set alarm manager
+                alarmManager.set(AlarmManager.RTC_WAKEUP, (long)((60 * Integer.parseInt(time[1].trim()))
+                        + (60 * 60 * Integer.parseInt(time[0].trim()))), pendingIntent);
+
 
                 TextView tvName = (TextView) convertView.findViewById(R.id.alarmName);
                 tvName.setText(name);
                 TextView tvTime = (TextView) convertView.findViewById(R.id.time);
-                //tvTime.setText(time[0]);
+                tvTime.setText(time[0]);
                 //Switch isOn = (Switch) findViewById(R.id.btnOnOff);
             }
 
@@ -153,8 +160,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-           // Log.i("ourList count: ", Integer.toString(ourList.size()));
-            //Log.i("getCount", Integer.toString(ourList.size() / 3));
             return ourList.size() / 3;
         }
     }
